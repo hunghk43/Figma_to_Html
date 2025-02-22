@@ -1,3 +1,4 @@
+/* Class chung */
 * {
   box-sizing: border-box;
 }
@@ -6,4 +7,106 @@ html {
 }
 body {
   font-size: 1.6rem;
+  font-family: "Poppins", serif;
+}
+/* Class riêng */
+/* .body a {
+  text-decoration: none;
+}
+.btn a {
+  text-decoration: none;
+}
+.main-content {
+  display: flex;
+  margin-left: 135px;
+}
+.main-content ul {
+  display: flex;
+}
+.logo {
+  color: #171100;
+  font-size: 2.4rem;
+}
+ */
+/* =============================commom========================= */
+a {
+  text-decoration: none;
+}
+.btn {
+  /* Vì btn là thẻ a, mà thẻ a là inline, nên không  thể di chuyển padding top và padding bottom được */
+  display: inline-block;
+  /* display: block; */
+  padding: 11px 16px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+  line-height: 28px; /* 175% */
+  border-radius: 24.5px;
+  background: #171100;
+  /* chiều rộng tối thiểu của nút bấm */
+  min-width: 118px;
+}
+/* tránh việc lặp lại body ở các phần sau */
+/* BƯỚC 1 : SẮP XẾP BỐ CỤC THEO CHIỀU NGANG */
+.header {
+  background: #fffcf4;
+  position: sticky;
+  /* vì padding là 36px nên  muốn cách 8px thì 36-8=28 */
+  top: -28px;
+}
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px;
+}
+.nav ul {
+  display: flex;
+}
+.nav {
+  margin-left: auto;
+}
+/* BƯỚC 2 : đo chiều ngang dự án */
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* BƯỚC 3 : CODE TỪNG PHẦN */
+.nav a {
+  /* lưu ý : thẻ a là thẻ inline, nên có box chứa chỉ xung quoanh nó */
+  color: #5f5b53;
+  font-size: 1.6rem;
+  padding: 8px 21px;
+  position: relative;
+}
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  font-style: normal;
+  font-weight: 600;
+  /* text-shadow : Trục X, Trục Y, Độ nhòe, Màu */
+  /* text-shadow: 1px 0 10px red; */
+  text-shadow: 1px 0 0 currentColor;
+}
+
+.nav li.active a::after {
+  /* LƯU Ý : THUỘC TÍNH AFTER THÌ NÓ LÀ INLINE, NÊN CẦN CHUYỂN  DẠNG DISPLAY */
+  display: block;
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+  position: absolute;
+  left: 21px;
+  bottom: 6px;
+}
+.header .btn-sign-up {
+  min-width: 144px;
+}
+.header .action {
+  margin-left: 49px;
 }
