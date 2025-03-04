@@ -5,6 +5,14 @@
   --font-heading: "Sen", sans-serif;
   --primary-color: #ffb900;
 }
+.heading-lv2 {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.27;
+  letter-spacing: -0.76px;
+}
 html {
   font-size: 62.5%;
 }
@@ -149,7 +157,7 @@ a {
   margin-left: 16px;
 }
 .media-block .img {
-  filter: drop-shadow(1px 10px 20px green);
+  filter: drop-shadow(1px 1px 50px gold);
 }
 .info.title {
   color: #5f5b53;
@@ -174,10 +182,10 @@ a {
   font-family: "Baloo Thambi 2", cursive;
   font-size: 5rem;
   text-transform: uppercase;
-  animation: glow 3s ease-in-out infinite;
+  animation: hunghk43 3s ease-in-out infinite;
   animation-delay: var(--delay);
 }
-@keyframes glow {
+@keyframes hunghk43 {
   0%,
   100% {
     color: var(--color);
@@ -305,4 +313,44 @@ a {
 }
 .hero .stats strong:nth-child(2) {
   margin-left: 28px;
+}
+/* =======================popular===================== */
+.popular {
+  padding: 65px 0;
+
+  margin-top: 135px;
+}
+.popular .popular-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.popular-top .controls {
+  display: flex;
+  gap: 18px;
+}
+.popular-top .desc {
+  width: 458px;
+  color: #5f5b53;
+
+  font-size: 1.8rem;
+  line-height: 1.67;
+  margin-top: 16px;
+}
+.popular-top .control-btn {
+  /* xóa nền: trong suốt */
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.popular-top .control-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
 }
