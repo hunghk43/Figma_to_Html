@@ -1,61 +1,56 @@
-/* Class chung */
 * {
   box-sizing: border-box;
+}
+:root {
+  --font-heading: "Sen", sans-serif;
+  --primary-color: #ffb900;
 }
 html {
   font-size: 62.5%;
 }
 body {
   font-size: 1.6rem;
-  font-family: "Poppins", serif;
+  /* áp  dụng cho các thẻ con */
+  font-family: "Poppins", sans-serif;
 }
-/* Class riêng */
-/* .body a {
-  text-decoration: none;
-}
-.btn a {
-  text-decoration: none;
-}
-.main-content {
-  display: flex;
-  margin-left: 135px;
-}
-.main-content ul {
-  display: flex;
-}
-.logo {
-  color: #171100;
-  font-size: 2.4rem;
-}
- */
-/* =============================commom========================= */
+/* ------code chung cho dự án-----------------------------  */
 a {
   text-decoration: none;
 }
+.main-content {
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  /* kéo nhỏ trình duyệt không bị cách lề */
+  max-width: calc(100% - 48px);
+}
 .btn {
-  /* Vì btn là thẻ a, mà thẻ a là inline, nên không  thể di chuyển padding top và padding bottom được */
   display: inline-block;
-  /* display: block; */
-  padding: 11px 16px;
-  line-height: 50px;
   color: #fff;
+  padding: 0 16px;
+  min-width: 118px;
   font-size: 1.6rem;
   text-align: center;
   font-weight: 600;
   line-height: 28px; /* 175% */
-  border-radius: 24.5px;
+  border-radius: 999px;
   background: #171100;
-  /* chiều rộng tối thiểu của nút bấm */
-  min-width: 118px;
+  line-height: 50px;
 }
-/* tránh việc lặp lại body ở các phần sau */
-/* BƯỚC 1 : SẮP XẾP BỐ CỤC THEO CHIỀU NGANG */
+.btn:hover {
+  opacity: 0.9;
+}
+/* -===============HEADER================ */
 .header {
-  background: #fffcf4;
-  position: sticky;
-  /* vì padding là 36px nên  muốn cách 8px thì 36-8=28 */
-  top: -28px;
+  background-color: #fffcf4;
 }
+/* viết liền nhau vì tác động đòn thời cả 2 class */
+.header.fixed {
+  position: sticky;
+  top: -28px;
+  z-index: 1;
+}
+
 .header .body {
   display: flex;
   align-items: center;
@@ -67,16 +62,7 @@ a {
 .nav {
   margin-left: auto;
 }
-/* BƯỚC 2 : đo chiều ngang dự án */
-.main-content {
-  width: 1170px;
-  max-width: calc(100% - 48px);
-  margin-left: auto;
-  margin-right: auto;
-}
-/* BƯỚC 3 : CODE TỪNG PHẦN */
 .nav a {
-  /* lưu ý : thẻ a là thẻ inline, nên có box chứa chỉ xung quoanh nó */
   color: #5f5b53;
   font-size: 1.6rem;
   padding: 8px 21px;
@@ -85,28 +71,194 @@ a {
 .nav li.active a,
 .nav a:hover {
   color: #171100;
-  font-style: normal;
-  font-weight: 600;
-  /* text-shadow : Trục X, Trục Y, Độ nhòe, Màu */
-  /* text-shadow: 1px 0 10px red; */
+  /* font-weight: 600; */
   text-shadow: 1px 0 0 currentColor;
 }
-
 .nav li.active a::after {
-  /* LƯU Ý : THUỘC TÍNH AFTER THÌ NÓ LÀ INLINE, NÊN CẦN CHUYỂN  DẠNG DISPLAY */
-  display: block;
+  /*thuộc tính thẻ a là  inline-block,vì vậy mà  không set được  width,height */
   content: "";
+  display: block;
   width: 12px;
   height: 2px;
   border-radius: 1px;
   background: #171100;
   position: absolute;
-  left: 21px;
-  bottom: 6px;
+  margin-left: 21px;
+  margin-top: 6px;
 }
 .header .btn-sign-up {
   min-width: 144px;
+  margin-left: 40px;
 }
-.header .action {
-  margin-left: 49px;
+/* ==========================hero========================== */
+.hero {
+  /* giải thích vì sao không dùng margin : vì margin không đổ được màu nền, nên cách block header sẽ có 1 khoảng trắng */
+  padding: 56px 0 65px;
+  background-color: #fffcf4;
+}
+.hero .body {
+  display: flex;
+}
+/* =====hero left */
+.hero .media-block {
+  position: relative;
+  width: 48%;
+}
+.hero .media-block .img {
+  width: 470px;
+  height: 685px;
+  /* tránh vỡ ảnh */
+  object-fit: cover;
+  border-radius: 20px;
+}
+.hero .hero-summary {
+  position: absolute;
+  width: 270px;
+
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+  right: 0;
+  bottom: 48px;
+  padding: 24px;
+}
+.hero-summary .item {
+  display: flex;
+  align-items: center;
+}
+.hero-summary .item + .item {
+  margin-top: 22px;
+}
+.hero-summary .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff9e8;
+}
+.hero-summary .icon2 {
+  background-color: #fcefff;
+}
+.hero-summary .icon3 {
+  background-color: #ebeaff;
+}
+.hero-summary .info {
+  margin-left: 16px;
+}
+.media-block .img {
+  filter: drop-shadow(1px 10px 20px green);
+}
+.info.title {
+  color: #5f5b53;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.86;
+}
+.info .label {
+  color: #171100;
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+}
+/* =================hero right================= */
+.hero .content-block {
+  width: 52%;
+  padding-left: 130px;
+  padding-top: 64px;
+}
+.hero .heading {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: -1.16px;
+}
+.hero .desc {
+  color: #5f5b53;
+
+  font-size: 1.8rem;
+
+  line-height: 1.67;
+  margin-top: 22px;
+}
+.hero .ctv-group {
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+}
+.hero-ctn {
+  /* width: 180px; */
+  min-width: 180px;
+  line-height: 64px;
+  border-radius: 32px;
+  background: var(--primary-color);
+}
+.hero .watch-video {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  margin-left: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* thẻ button là thẻ inline thì nó sẽ nằm cùng 1 hàng với thẻ a */
+.hero .watch-video .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero .watch-video span {
+  color: #171100;
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+  margin-left: 14px;
+}
+.hero .desc-recent {
+  margin-top: 48px;
+}
+/* .hero .desc-year {
+  margin-top: 8px;
+}
+.hero .desc-year span:nth-child(1) {
+  color: #171100;
+  font-size: 4.4rem;
+
+  font-weight: 700;
+  line-height: 1.23;
+  margin-right: 10px;
+}
+.hero .desc-year span:nth-child(2) {
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 30px;
+  margin-right: 10px;
+}
+.hero .desc-year strong:nth-child(2) {
+  margin-left: 28px;
+} */
+.hero .stats {
+  margin-top: 8px;
+}
+.hero .stats strong {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 1.23;
+  margin-right: 15px;
+}
+.hero .stats strong:nth-child(2) {
+  margin-left: 28px;
 }
