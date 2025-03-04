@@ -170,14 +170,58 @@ a {
   padding-left: 130px;
   padding-top: 64px;
 }
-.hero .heading {
-  color: #171100;
-  font-family: var(--font-heading);
-  font-size: 5.8rem;
-  font-weight: 700;
-  line-height: 1.17;
-  letter-spacing: -1.16px;
+.hero .heading span {
+  font-family: "Baloo Thambi 2", cursive;
+  font-size: 5rem;
+  text-transform: uppercase;
+  animation: glow 3s ease-in-out infinite;
+  animation-delay: var(--delay);
 }
+@keyframes glow {
+  0%,
+  100% {
+    color: var(--color);
+    text-shadow: 0 0 10px #ffcc00, 0 0 50px #ffcc00, 0 0 100px #ffcc00;
+  }
+  10%,
+  90% {
+    color: #0033ff;
+    text-shadow: none;
+  }
+}
+/* .hero .heading span {
+  font-family: "Baloo Thambi 2", cursive;
+  font-size: 5rem;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #2400ff, #aa00ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s ease-in-out infinite, gradientShift 6s linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px #0652dd, 0 0 50px #0652dd, 0 0 100px #0652dd;
+  }
+  10%, 90% {
+    text-shadow: none;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
 .hero .desc {
   color: #5f5b53;
 
