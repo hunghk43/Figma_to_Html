@@ -47,6 +47,7 @@ a {
 }
 .btn:hover {
   opacity: 0.9;
+  cursor: pointer;
 }
 /* -===============HEADER================ */
 .header {
@@ -314,7 +315,7 @@ a {
 .hero .stats strong:nth-child(2) {
   margin-left: 28px;
 }
-/* =======================popular===================== */
+/* =======================popular-top===================== */
 .popular {
   padding: 65px 0;
 
@@ -353,4 +354,174 @@ a {
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
+}
+/* ==========================popular list=============== */
+/* .popular-list {
+  display: flex;
+ 
+  justify-content: space-between;
+ 
+  margin-top: 55px;
+  gap: 30px;
+}
+.popular-list .list-item-stars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+}
+.list-item-stars .number {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.list-item-stars h3 {
+  color: #171100;
+
+  font-size: 1.8rem;
+
+  font-weight: 600;
+  line-height: 1.67;
+}
+.number .stars {
+  width: 18px;
+  height: 18px;
+}
+.number span {
+  color: #fea31b;
+
+  font-size: 1.6rem;
+
+  line-height: 1.75;
+}
+.list-item p {
+  width: 326px;
+  color: #5f5b53;
+
+  font-size: 1.4rem;
+
+  line-height: 1.86;
+  margin-top: 6px;
+  margin-left: 22px;
+}
+.list-item-book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+}
+.list-item-book span {
+  color: #171100;
+  font-size: 1.8rem;
+
+  font-weight: 600;
+  line-height: 1.67;
+}
+.list-item-book .btn-book {
+  width: 118px;
+  height: 50px;
+  flex-shrink: 0;
+ 
+  border: none;
+  background: #ffb900;
+}
+.btn-book2 {
+  background-color: #171100;
+} */
+/*-----------------------------------------------------
+ -------------------------------------------------------
+ -----------------------------------------------------*/
+/* ==========================popular list=============== */
+.popular-list {
+  display: flex;
+  margin-top: 55px;
+  /* justify-content: space-between; */
+  gap: 30px;
+}
+.popular .popular-item .pupular-img {
+  width: 100%;
+
+  object-fit: cover;
+  height: 278px;
+}
+.popular-item {
+  border-radius: 12px;
+  border: 1px solid #e2dfda;
+  background: #fff;
+}
+.popular-item:hover {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+}
+.popular-item .pupular-img {
+  border-radius: 12px 12px 50px 0px;
+}
+.popular-item .pupular-head {
+  padding: 16px 22px 22px;
+}
+.pupular-head .popular-item1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popular-item1 .title {
+  color: #171100;
+
+  font-size: 1.8rem;
+
+  font-weight: 600;
+  line-height: 1.67;
+}
+.popular-item1 .pupular-star {
+  width: 18px;
+  height: 18px;
+}
+.popular-item1 span {
+  color: #fea31b;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.65;
+  margin-left: 6px;
+}
+.pupular-star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pupular-head .popular-desc {
+  width: 326px;
+  color: #5f5b53;
+
+  font-size: 1.4rem;
+
+  font-weight: 400;
+  line-height: 1.86;
+  margin-top: 6px;
+}
+.popular-item .popular-footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 12px;
+}
+.popular-footer span {
+  color: #171100;
+
+  font-size: 1.8rem;
+
+  font-weight: 600;
+  line-height: 1.67;
+}
+.popular-footer .btn-item {
+  width: 118px;
+  height: 50px;
+  border-radius: 25px;
+
+  border: none;
+}
+.popular-footer .btn-item:hover {
+  background-color: #ffb900;
+  /* box-shadow: 5px 5px 20px red; */
 }
