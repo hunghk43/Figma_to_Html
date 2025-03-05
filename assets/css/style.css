@@ -49,6 +49,22 @@ a {
   opacity: 0.9;
   cursor: pointer;
 }
+/* code tối ưu hóa:người dùng nhập văn bản dài--->  phá vỡ cấu  trúc văn  bản */
+.line-camp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* quá 2 dòng thì  mới 3 chấm ...*/
+/* phần tử nào có 2class là line-camp và line-2 thì nó  mới thực hiện */
+.line-camp.line-2 {
+  --line-clamp: 2;
+}
+/* tránh văn bản viết liền liên tiếp thì phá vỡ cấu trúc dòng */
+.break-all {
+  word-break: break-all;
+}
 /* -===============HEADER================ */
 .header {
   background-color: #fffcf4;
@@ -448,6 +464,8 @@ a {
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
+  /* viết tắt của : flex -grow / -shrink / -basic */
+  flex: 1;
 }
 .popular-item:hover {
   border: 1px solid transparent;
