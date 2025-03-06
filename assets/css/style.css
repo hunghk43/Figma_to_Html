@@ -669,19 +669,49 @@ a {
 }
 /* =========feature========================== */
 .feature {
+  padding: 65px 0;
   margin-top: 135px;
-  padding: 96px 0;
 }
-.feature .feature-list {
-  display: flex;
-}
-.feature-list .feature-item .feature-img {
+
+.feature .body .feature-images {
   display: flex;
   gap: 30px;
 }
-.feature-list .feature-item .feature-img .img2 {
-  top: 33px;
+.feature .body .feature-images .small {
+  margin-top: 34px;
 }
-.feature-item2 {
-  width: 27%;
+.feature .body img {
+  width: 270px;
+  height: 404px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.feature .body {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.feature .feature-contents {
+  width: 41%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* display: flex;
+  /* flex-wrap: nowrap;
+  align-content: center; */
+}
+.feature .feature-contents .desc {
+  margin-top: 16px;
+  color: #5f5b53;
+
+  font-size: 1.6rem;
+
+  line-height: 1.86;
+}
+.feature .feature-contents .btn-sign-up {
+  margin-top: 32px;
+  width: 137px;
+  height: 50px;
+  border-radius: 26px;
+  background: #ffb900;
 }
