@@ -572,65 +572,116 @@ a {
   line-height: 1.86;
 } */
 
-/* =================Feedback================== */
-.feeback {
+/* =================feedback================== */
+.feedback {
   margin-top: 135px;
   padding: 96px 0;
   background: #2e2100;
 }
-.feeback .feedback-item {
+
+.feedback-list {
   display: flex;
+  /* ẩn phần thừa */
+  overflow: hidden;
 }
-.feedback-item img {
+
+.feedback-item {
+  width: 100%;
+  display: flex;
+  /* quy định độ co của phần tử, set = 0 thì giữ  nguyên mặc  định box = main-content, đẩy box2,3 qua chỗ khác */
+  flex-shrink: 0;
+  animation: slide 10s infinite ease;
+}
+@keyframes slide {
+  0%,
+  30% {
+    transform: translateX(0);
+  } /* Hiển thị item 1 */
+
+  33%,
+  63% {
+    transform: translateX(-100%);
+  } /* Chuyển sang item 2 */
+
+  66%,
+  95% {
+    transform: translateX(-200%);
+  } /* Chuyển sang item 3 */
+
+  96%,
+  100% {
+    transform: translateX(-300%);
+  } /* Tạo hiệu ứng trượt nhẹ rồi quay về item 1 */
+}
+.feedback-item .avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .feedback-item .info .member-name {
+  margin-top: 18px;
   color: #f7f7f7;
   font-family: var(--font-heading);
   font-size: 2.4rem;
-
   font-weight: 700;
   line-height: 1.42;
-  margin-top: 18px;
 }
+
 .feedback-item .info .desc {
   margin-top: 4px;
   color: #bfbcb2;
-  font-family: var(--font-heading);
   font-size: 1.4rem;
   line-height: 1.86;
 }
+
 .feedback-item .dots {
+  gap: 6px;
   display: flex;
   margin-top: 28px;
-  gap: 6px;
 }
+
 .feedback-item .dot {
+  height: 6px;
+  width: 6px;
   border-radius: 50%;
   background: #634700;
-  width: 6px;
-  height: 6px;
   cursor: pointer;
 }
+
 .feedback-item .dot.active {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   cursor: default;
 }
+/* khối bên phải */
 .feedback-item .content {
+  position: relative;
   width: 66%;
   margin-left: auto;
 }
+
 .feedback-item blockquote {
   color: #fff;
-  font-family: var(--font-heading);
   font-size: 2.6rem;
   font-style: italic;
   line-height: 1.54;
 }
-.feedback-item.quote {
-  width: 30px;
-  height: 28px;
+/* =========feature========================== */
+.feature {
+  margin-top: 135px;
+  padding: 96px 0;
+}
+.feature .feature-list {
+  display: flex;
+}
+.feature-list .feature-item .feature-img {
+  display: flex;
+  gap: 30px;
+}
+.feature-list .feature-item .feature-img .img2 {
+  top: 33px;
+}
+.feature-item2 {
+  width: 27%;
 }
