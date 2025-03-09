@@ -33,6 +33,7 @@ a {
   max-width: calc(100% - 48px);
 }
 .btn {
+  position: relative;
   display: inline-block;
   color: #fff;
   padding: 0 16px;
@@ -45,8 +46,10 @@ a {
   background: #171100;
   line-height: 50px;
 }
+
 .btn:hover {
   opacity: 0.9;
+
   cursor: pointer;
 }
 /* code tối ưu hóa:người dùng nhập văn bản dài--->  phá vỡ cấu  trúc văn  bản */
@@ -460,13 +463,14 @@ a {
   object-fit: cover;
   height: 278px;
 }
-.popular-item {
+.popular .popular-item {
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
   /* viết tắt của : flex -grow / -shrink / -basic */
   flex: 1;
 }
+
 .popular-item:hover {
   border: 1px solid transparent;
   border-radius: 12px;
@@ -951,4 +955,66 @@ a {
   font-size: 1.4rem;
 
   line-height: 1.86;
+}
+/* Responsive */
+/* Cho máy tính bảng */
+@media (max-width: 1024px) {
+  .main-content {
+    max-width: calc(100% - 32px); /* Điều chỉnh padding */
+  }
+
+  .hero .body,
+  .popular-list,
+  .feedback-list,
+  .feature .body,
+  .feature2 .body,
+  .blogs .blog-list,
+  .footer .row {
+    flex-direction: column; /* Xếp chồng các phần tử theo chiều dọc */
+  }
+
+  .hero .media-block,
+  .hero .content-block,
+  .popular-top .info,
+  .popular-top .desc,
+  .feature .feature-contents,
+  .feature2 .feature-item .title,
+  .feature2 .feature-item,
+  .blogs .item,
+  .footer .row .column {
+    width: 100%; /* Chiều rộng đầy đủ */
+    padding-left: 0; /* Loại bỏ padding */
+  }
+  .feature .feature-contents {
+    align-items: center;
+  }
+
+  .hero .content-block {
+    padding-top: 20px; /* Điều chỉnh padding */
+  }
+
+  .popular-list {
+    gap: 20px; /* Điều chỉnh khoảng cách */
+  }
+
+  .blogs .blog-list {
+    gap: 20px;
+  }
+  .blogs .item {
+    width: 100%; /* Điều chỉnh khi cần */
+  }
+  .footer .row .column:first-child {
+    width: 100%;
+  }
+}
+
+/* Cho điện thoại di động */
+@media (max-width: 767px) {
+  /* Thêm style riêng cho di động */
+  .header .body {
+    flex-direction: column;
+  }
+  .header .action {
+    margin-top: 1rem;
+  }
 }
